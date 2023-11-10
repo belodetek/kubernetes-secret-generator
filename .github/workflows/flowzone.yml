@@ -43,8 +43,7 @@ jobs:
     with:
       jobs_timeout_minutes: 60
       repo_config: true
-      repo_description: |
-        "Build scaffold for kubernetes-secret-generator (multi-arch)"
+      repo_description: "Build scaffold for kubernetes-secret-generator (multi-arch)"
       repo_homepage: "https://github.com/mittwald/kubernetes-secret-generator"
       # FIXME: remove when https://github.com/mittwald/kubernetes-secret-generator/issues/80 is resolved
       docker_images: |
