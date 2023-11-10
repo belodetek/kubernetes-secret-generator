@@ -1,0 +1,56 @@
+---
+name: Flowzone
+
+on:
+  pull_request:
+    types: [opened, synchronize, closed]
+    branches: [main, master]
+  pull_request_target:
+    types: [opened, synchronize, closed]
+    branches: [main, master]
+
+permissions:
+  actions: read
+  checks: read
+  contents: read
+  deployments: read
+  issues: read
+  discussions: read
+  packages: write
+  pages: read
+  pull-requests: read
+  repository-projects: read
+  security-events: read
+  statuses: read
+
+jobs:
+  flowzone:
+    name: Flowzone
+    uses: product-os/flowzone/.github/workflows/flowzone.yml@master
+    # prevent duplicate workflow executions for pull_request and pull_request_target
+    if: |
+      (
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        github.event_name == 'pull_request'
+      ) || (
+        github.event.pull_request.head.repo.full_name != github.repository &&
+        github.event_name == 'pull_request_target'
+      )
+    secrets:
+      DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
+    with:
+      jobs_timeout_minutes: 60
+      repo_config: true
+      repo_description: |
+        "Build scaffold for kubernetes-secret-generator (multi-arch)"
+      repo_homepage: "https://github.com/mittwald/kubernetes-secret-generator"
+      # FIXME: remove when https://github.com/mittwald/kubernetes-secret-generator/issues/80 is resolved
+      docker_images: |
+        ghcr.io/belodetek/kubernetes-secret-generator
+      docker_runs_on: >
+        {
+          "linux/amd64": ["ubuntu-22.04"],
+          "linux/arm64": ["ubuntu-22.04"]
+        }

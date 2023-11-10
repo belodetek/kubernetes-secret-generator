@@ -1,0 +1,11 @@
+---
+name: Build
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main, master]
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-operator.yml
