@@ -1,4 +1,15 @@
 - commits:
+    - subject: Update README.md
+      hash: 52a285aaf219db8ed254024adc6c50eaef0b6109
+      body: ""
+      footer:
+        change-type: patch
+      author: Anton Belodedenko
+      nested: []
+  version: 0.0.4
+  title: ""
+  date: 2023-11-12T22:33:29.112Z
+- commits:
     - subject: update readme
       hash: b0fd18223e1a0ea4b4359aef8a449e712c7e71f9
       body: ""
