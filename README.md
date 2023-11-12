@@ -4,4 +4,6 @@
 
     docker pull ghcr.io/belodetek/kubernetes-secret-generator:latest
 
+Remove repository when https://github.com/mittwald/kubernetes-secret-generator/issues/80 is resolved.
+
 [kubernetes-secret-generator]: https://github.com/mittwald/kubernetes-secret-generator
