@@ -1,4 +1,4 @@
-# kubernetes-secret-generator [![Build Status](https://github.com/belodetek/cfn-generic-custom-resource/actions/workflows/flowzone.yml/badge.svg)](https://github.com/belodetek/cfn-generic-custom-resource/actions/workflows/flowzone.yml)
+# kubernetes-secret-generator [![Build Status](https://github.com/belodetek/kubernetes-secret-generator/actions/workflows/flowzone.yml/badge.svg)](https://github.com/belodetek/kubernetes-secret-generator/actions/workflows/flowzone.yml)
 
 > [kubernetes-secret-generator] build scaffold to provide multi-arch images
 
